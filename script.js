@@ -187,3 +187,18 @@ const perGroup = 1000;
 boardPassengers(180, 3);
 
 // Coding Challenge #2
+// let h1ToBlue;
+// (function () {
+//   const header = document.querySelector('h1');
+//   header.style.color = 'red';
+//   h1ToBlue = function () {
+//     header.style.color = 'blue';
+//   };
+// })();
+// document.querySelector('body').addEventListener('click', h1ToBlue);
+const h1ToBlue = (function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  return () => (header.style.color = 'blue');
+})();
+document.querySelector('body').addEventListener('click', h1ToBlue);
